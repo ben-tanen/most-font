@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd _images/bw_maps
+cd ../images/bw_maps
 for f in bw_map_*.png
 do
     echo "Processing $f"

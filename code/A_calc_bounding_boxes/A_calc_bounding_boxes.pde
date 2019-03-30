@@ -11,7 +11,7 @@ void draw() {
 
 void output_lf_bbox_table(String input, String output, boolean scale) {
   // load in table of fonts/letters
-  Table table = loadTable("../_data/".concat(input), "header");
+  Table table = loadTable("../../data/".concat(input), "header");
   table.addColumn("min_x", 1);
   table.addColumn("min_y", 1);
   table.addColumn("max_x", 1);
@@ -21,8 +21,7 @@ void output_lf_bbox_table(String input, String output, boolean scale) {
   for (TableRow row : table.rows()) {
     String font = row.getString("font");
     String letter = row.getString("letter");
-    
-    println(letter.concat(" --- ").concat(font));
+    println(String.format("%s - %s", letter, font));
   
     background(255);
     fill(0);
@@ -39,7 +38,7 @@ void output_lf_bbox_table(String input, String output, boolean scale) {
     clear();
   }
   
-  saveTable(table, "../_data/".concat(output));
+  saveTable(table, "../../data/".concat(output));
 }
 
 int [] calculate_bounding_box() {

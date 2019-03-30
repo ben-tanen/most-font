@@ -12,12 +12,12 @@ void draw() {
   fill(#ff0000, 2);
   
   // load in table of fonts/letters
-  Table table = loadTable("../_data/letter_fonts2.csv", "header");
+  Table table = loadTable("../../data/letter_fonts2.csv", "header");
   for (TableRow row : table.rows()) {
     
     // if new letter, save output and clear
     if (!letter.equals(row.getString("letter"))) {
-      save(String.format("../_images/overlap_maps/overlap_map_%s.png", letter));
+      save(String.format("../../images/overlay_maps/overlay_map_%s.png", letter));
       clear();
       
       // set background and fill
@@ -37,5 +37,5 @@ void draw() {
   }
   
   // final output of Z
-  save(String.format("../_images/overlap_maps/overlap_map_%s.png", letter));
+  save(String.format("../../images/overlay_maps/overlay_map_%s.png", letter));
 }

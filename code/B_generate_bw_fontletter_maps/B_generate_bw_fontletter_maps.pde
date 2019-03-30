@@ -11,7 +11,7 @@ void draw() {
   fill(255);
   
   // load in table of fonts/letters
-  Table table = loadTable("../_data/letter_fonts2.csv", "header");
+  Table table = loadTable("../../data/letter_fonts2.csv", "header");
   for (TableRow row : table.rows()) {
     
     // get font and letter
@@ -25,7 +25,7 @@ void draw() {
     text(letter, 200 + row.getFloat("scale_offset_x"), 200 + row.getFloat("scale_offset_y"));
     
     // save output, clear
-    save(String.format("../_images/bw_maps/bw_map_%s_%s.png", letter, font.replace(" ","")));
+    save(String.format("../../images/bw_maps/bw_map_%s_%s.png", letter, font.replace(" ","")));
     clear();
   }
 }

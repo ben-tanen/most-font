@@ -6,7 +6,7 @@ void setup() {
 void draw() {
   
   // loop through fonts/letters
-  Table table = loadTable("../_data/letter_fonts2.csv", "header");
+  Table table = loadTable("../../data/letter_fonts2.csv", "header");
   table.addColumn("score", 3);
   for (TableRow row : table.rows()) {
     
@@ -19,14 +19,14 @@ void draw() {
     row.setFloat("score", calculate_overlap_score());
     
     // save layered image
-    save(String.format("../_images/overlaps/overlap_%s_%s.png", letter, font));
+    save(String.format("../../images/overlaps/overlap_%s_%s.png", letter, font));
   }
   
-  saveTable(table, "../_data/letter_font_scores.csv");
+  saveTable(table, "../../data/letter_font_scores.csv");
 }
 
 void layer_images(String letter, String font) {
-  image(loadImage(String.format("../_images/overlap_maps/overlap_map_%s.png", letter)), 0, 0);
+  image(loadImage(String.format("../_images/overlay_maps/overlay_map_%s.png", letter)), 0, 0);
   image(loadImage(String.format("../_images/trans_maps/trans_map_%s_%s.png", letter, font.replace(" ",""))), 0, 0);
 }
 
