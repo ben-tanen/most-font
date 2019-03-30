@@ -19,15 +19,15 @@ void draw() {
     row.setFloat("score", calculate_overlap_score());
     
     // save layered image
-    save(String.format("../../images/overlaps/overlap_%s_%s.png", letter, font));
+    save(String.format("../../images/overlap/overlap_%s_%s.png", letter, font));
   }
   
   saveTable(table, "../../data/letter_font_scores.csv");
 }
 
 void layer_images(String letter, String font) {
-  image(loadImage(String.format("../_images/overlay_maps/overlay_map_%s.png", letter)), 0, 0);
-  image(loadImage(String.format("../_images/trans_maps/trans_map_%s_%s.png", letter, font.replace(" ",""))), 0, 0);
+  image(loadImage(String.format("../../images/stacked/stacked_%s.png", letter)), 0, 0);
+  image(loadImage(String.format("../../images/trans/trans_%s_%s.png", letter, font.replace(" ",""))), 0, 0);
 }
 
 float calculate_overlap_score() {
